@@ -1,1 +1,1 @@
-![alt 属性文本](template.png)
+![alt 属性文本](template_chain.png)
