@@ -1,7 +1,5 @@
 package com.example.demo.algorithm.sort;
 
-import sun.security.x509.EDIPartyName;
-
 import java.util.Random;
 
 public class QuickSort {
@@ -14,7 +12,7 @@ public class QuickSort {
         }
 
         quickSort(arr, 0, arr.length - 1);
-
+        System.out.println("----------------");
         for (int i = 0; i < 30; i++) {
             System.out.println("No." + i + "   " + arr[i]);
         }
@@ -23,9 +21,18 @@ public class QuickSort {
 
     }
 
+    /*
+     * 1. 分治
+     * 2. 循环结束条件 if(begin < end);
+     * 3. 实际处理实在partition函数里面
+     * 4. quickSort 分发任务
+     * 5. 可以使用多线程来优化大数据的排序
+     * */
+
     public static void quickSort(int arr[], int begin, int end) {
         if (begin < end) {
             int partitionIndex  = partition(arr, begin, end);
+            // 分治
             quickSort(arr, begin, partitionIndex - 1);
             quickSort(arr, partitionIndex + 1, end);
 
@@ -38,15 +45,17 @@ public class QuickSort {
         int right = end - 1;
 
         while (left < right) {
-            if (arr[left] < pivot) {
+            while (arr[left] < pivot) {
                 left++;
             }
-            if (arr[right] > pivot) {
+            while (arr[right] > pivot) {
                 right --;
             }
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
+            if (left < right) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+            }
         }
 
         int temp = arr[left];
@@ -55,17 +64,41 @@ public class QuickSort {
         return left;
     }
 
+//    public void quickSort(int[] arr, int begin, int end) {
+//        if (begin < end) {
+//            int mid = partition(arr, begin, end);
+//            quickSort(arr, begin, mid - 1);
+//            quickSort(arr, mid + 1, end);
+//        }
+//    }
+//
+//    private int partition(int[] arr, int begin, int end) {
+//        int left = begin;
+//        int right = end - 1;
+//        int pivot = arr[end];
+//
+//        while (left < right) {
+//            while (arr[left] < pivot) {
+//                left++;
+//            }
+//            while (arr[right] > pivot) {
+//                right--;
+//            }
+//            if (left < right) {
+//                int temp = arr[left];
+//                arr[left] = arr[right];
+//                arr[right] = temp;
+//            }
+//        }
+//
+//        int temp = arr[left];
+//        arr[left] = arr[end];
+//        arr[end] = temp;
+//
+//        return left;
+//    }
 
 
-
-
-    /*
-    * 1. 分治
-    * 2. 循环结束条件 if(begin < end);
-    * 3. 实际处理实在partition函数里面
-    * 4. quickSort 分发任务
-    * 5. 可以使用多线程来优化大数据的排序
-    * */
 
 //    public void quickSort(int arr[], int begin, int end) {
 //        if (begin < end) {

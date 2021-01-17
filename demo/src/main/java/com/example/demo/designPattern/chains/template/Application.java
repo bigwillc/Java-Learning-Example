@@ -1,12 +1,15 @@
-package com.example.demo.designPattern.chains.array;
+package com.example.demo.designPattern.chains.template;
 
+/**
+ * @author bigwillc
+ **/
 public class Application {
     public static void main(String[] args) {
         //1.创建一个责任链
         HandlerChain chain = new HandlerChain();
         //2.绑定两个处理的Handler
-        chain.addHandler(new HandlerA());
-        chain.addHandler(new HandlerB());
+        chain.addHandler(new TemplateHandler1());
+        chain.addHandler(new TemplateHandler2());
         //3.执行处理方法
         chain.handler();
     }
