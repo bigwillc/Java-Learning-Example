@@ -24,7 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Mono<User> getUserById(String id) {
+    public Mono<User> getUserById(int id) {
+        // 从一个 Optional 对象或可能为 null 的对象中创建 Mono
         return Mono.justOrEmpty(this.users.get(id));
     }
 

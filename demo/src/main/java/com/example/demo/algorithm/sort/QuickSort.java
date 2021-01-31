@@ -1,19 +1,21 @@
 package com.example.demo.algorithm.sort;
 
+import java.math.BigInteger;
 import java.util.Random;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = new int[10];
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            arr[i] = random.nextInt(100);
-            System.out.println("No." + i +"   "+ arr[i]);
-        }
+//        int[] arr = new int[10];
+//        Random random = new Random();
+//        for (int i = 0; i < 10; i++) {
+//            arr[i] = random.nextInt(100);
+//            System.out.println("No." + i +"   "+ arr[i]);
+//        }
+        int[] arr = {34, 76, 6, 74, 50, 70, 78, 40, 54, 68};
 
         quickSort(arr, 0, arr.length - 1);
         System.out.println("----------------");
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println("No." + i + "   " + arr[i]);
         }
 
@@ -45,10 +47,10 @@ public class QuickSort {
         int right = end - 1;
 
         while (left < right) {
-            while (arr[left] < pivot) {
+            while (left <right && arr[left] < pivot) {
                 left++;
             }
-            while (arr[right] > pivot) {
+            while (left < right &&arr[right] > pivot) {
                 right --;
             }
             if (left < right) {
@@ -63,6 +65,38 @@ public class QuickSort {
         arr[end] = temp;
         return left;
     }
+
+
+//    public static void quickSort(int[] arr, int begin, int end) {
+//        if (begin < end) {
+//            int partitionIndex = partition(arr, begin, end);
+//            quickSort(arr, begin, partitionIndex - 1);
+//            quickSort(arr, partitionIndex + 1, end);
+//        }
+//    }
+//
+//    private static int partition(int[] arr, int left, int right) {
+//        int pivot = arr[right];
+//        int l = left;
+//        int r = right - 1;
+//        while (l<r) {
+//            while (arr[l] < pivot) {
+//                l++;
+//            }
+//            while (arr[r] > pivot) {
+//                r--;
+//            }
+//            if (l < r) {
+//                int temp = arr[l];
+//                arr[l] = arr[r];
+//                arr[r] = temp;
+//            }
+//        }
+//        int temp = arr[right];
+//        arr[right] = arr[l];
+//        arr[l] = temp;
+//        return l;
+//    }
 
 //    public void quickSort(int[] arr, int begin, int end) {
 //        if (begin < end) {

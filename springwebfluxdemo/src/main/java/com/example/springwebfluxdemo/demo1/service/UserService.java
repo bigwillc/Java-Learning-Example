@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
  **/
 public interface UserService {
     // 根据ID查询用户
-    Mono<User> getUserById(String id);
+    Mono<User> getUserById(int id);
 
     // 查询所有用户
     Flux<User> getUsers();
