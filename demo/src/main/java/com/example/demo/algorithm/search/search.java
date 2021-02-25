@@ -31,6 +31,11 @@ public class search {
     }
 
     public void bfs() {
+
+        /*
+        * 使用一个队列
+        * 每次如队的时候将这个节点能访问到的所有子节点如队
+        * */
 //        queue = []
 //        queue.append([start])
 //        visited.add(start);
