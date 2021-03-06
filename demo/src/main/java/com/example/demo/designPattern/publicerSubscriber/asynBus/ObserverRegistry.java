@@ -1,6 +1,5 @@
 package com.example.demo.designPattern.publicerSubscriber.asynBus;
 
-
 import org.assertj.core.util.Preconditions;
 
 import java.lang.reflect.Method;

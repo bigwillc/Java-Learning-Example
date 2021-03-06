@@ -7,6 +7,7 @@ public class Application {
         //2.绑定两个处理的Handler
         chain.addHandler(new HandlerA());
         chain.addHandler(new HandlerB());
+
         //3.执行处理方法
         chain.handler();
     }

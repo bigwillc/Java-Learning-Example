@@ -43,4 +43,9 @@ public class LongestPalindrome {
         }
         return true;
     }
+
+    /*
+    * 1. 奇偶
+    * 2. extend 延伸
+    * */
 }
