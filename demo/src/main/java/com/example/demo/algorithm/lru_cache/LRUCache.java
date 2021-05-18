@@ -85,4 +85,12 @@ public class LRUCache {
             moveToHead(node);
         }
     }
+
+    /*
+    * move to head
+    * remove tail
+    * remove node
+    * add node
+    *
+    * */
 }
