@@ -26,6 +26,7 @@ public class ThreeSum {
             while(j < k){
                 if (nums[i] + nums[j] + nums[k] == 0) {
                     res.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    // 去重
                     while (j < k && nums[j] == nums[j + 1]) {
                         j++;
                     }

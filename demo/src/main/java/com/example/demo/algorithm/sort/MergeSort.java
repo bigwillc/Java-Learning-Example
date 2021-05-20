@@ -17,20 +17,21 @@ public class MergeSort {
         int i = left, j = mid + 1, k = 0;
 
         // 所有这种合并都是这种三段式的
-        while (i < mid && j < right) {
-            temp[k] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
+        while (i <= mid && j <= right) {
+            temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
         }
 
         while (i <= mid) {
             temp[k++] = arr[i++];
         }
         while (j <= right) {
-            temp[j++] = arr[j++];
+            temp[k++] = arr[j++];
         }
 
         // arr 赋值
         for (int p = 0; p < temp.length; p++) {
-            arr[left + p] = arr[p];
+            arr[left + p] = temp[p];
         }
     }
+
 }

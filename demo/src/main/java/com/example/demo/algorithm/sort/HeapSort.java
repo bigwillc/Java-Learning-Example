@@ -8,6 +8,7 @@ public class HeapSort {
         if(arr.length == 0) return;
 
         int length = arr.length;
+        // 构建一个大顶堆
         for (int i = length / 2 - 1; i >= 0; i--) {
             heapify(arr, length, i);
         }

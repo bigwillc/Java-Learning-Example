@@ -30,4 +30,12 @@ public class GenerateParenthesis {
             generate(left, right + 1, s + ')', n);
         }
     }
+
+    public static void main(String[] args) {
+        generateParenthesis(14);
+        for (int i = 0; i < res.size(); i++) {
+            System.out.println(res.get(i));
+        }
+        System.out.println(res.size());
+    }
 }
