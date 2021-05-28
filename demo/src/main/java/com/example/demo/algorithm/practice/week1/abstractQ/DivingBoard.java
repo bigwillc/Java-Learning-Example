@@ -1,4 +1,4 @@
-package com.example.demo.algorithm.practice.week1;
+package com.example.demo.algorithm.practice.week1.abstractQ;
 
 /**
  * @author bigwillc
